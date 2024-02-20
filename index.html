@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS Basics</title>
+    <script type="text/javascript" src="message.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+
+</head>
+
+<body>
+    <div class="container justify-contents center">
+        <div class="row">
+            <div class="col-md-12">
+
+                <p class="text color primary">Welcome to JavaScript</p>
+                <form>
+                    <input type="button" value="click" onclick="message()" class="btn btn-primary" />
+                </form>
+                <p id="demo"></p>
+                <script>
+                    let x = solution("joseph");
+                    document.getElementById("demo").innerHTML = x;
+
+
+
+                </script>
+                <br class="container m-md-auto bg-body-secondary">
+                    //default parameter values
+                   </br>
+                    <code>
+
+                        function solution1(x, y = 10) {
+                            return x + y;
+                        }
+                        document.getElementById("demo1").innerHTML = solution1(5);
+                   
+                   </code>
+                   <p id="demo1"></p>
+                    <script>
+
+                        function solution1(x, y = 10) {
+                            return x + y;
+                        }
+                        document.getElementById("demo1").innerHTML = solution1(5);
+                    </script>
+                </div>
+                <div class="container bg-body-tertiary">
+                    //array
+                    <p id="demo2"></p>
+                    <script>
+                        const person = ["John", "Doe", 46];
+                        document.getElementById("demo2").innerHTML = person[0] + " " + person[1];
+                    </script>
+                </div>
+                <div class="container bg-body-secondary">
+                    //object
+                    <p id="demo3"></p>
+                    <script>
+                        const name = {
+                            firstName: "John",
+                            lastName: "Doe",
+                            age: 46
+                        };
+                        document.getElementById("demo3").innerHTML = name.firstName + " " + name.lastName; 
+                    </script>
+                </div>
+                <div class="bg-body-secondary">
+                    //error handling
+                    <p>Enter your age</p>
+                    <p id="demo4"></p>
+
+                    <input type="text" id="num">
+                    <button type="button" class="btn btn-primary" onclick="check()"
+                        onmouseover="this.style.backgroundColor='black'"
+                        onmouseout="this.style.backgroundColor='blue'">Test Input</button>
+                    <p id="error"></p>
+                    <script>
+                        function check() {
+                            let x = document.getElementById("num").value;
+                            try {
+                                if (x == "") throw "empty";
+                                if (isNaN(x)) throw "not a number";
+
+                                if (x < 18) throw "you are too young";
+                                if (x >= 18) throw "you are old enough";
+                            }
+                            catch (err) {
+                                document.getElementById("error").innerHTML = "your age is " + x + "," + err;
+
+                            }
+                        }
+                    </script>
+
+                </div>
+                <div class="container-sm bg-secondary">
+                    //loops
+                    <p id="demo5"> </p>
+                    <p id="demo6"> </p>
+                    <script>
+                        let text = "";
+
+                        let j = 0;
+                        for (i = 0; i < 5; i++) {
+                            text += "<br>The number is " + i;
+
+                        }
+                        let text1 = "";
+                        while (j < 5) {
+                            text1 = text1 + "<br>The number is " + j;
+                            j++;
+                        }
+                        document.getElementById("demo5").innerHTML = "for loop" + text;
+                        document.getElementById("demo6").innerHTML = "while loop" + text1;
+                    </script>
+
+                </div>
+                <div class="container-fluid bg-primary">
+                    //class
+                    <p id="demo7"></p>
+                    <script>
+                        class car {
+                            constructor(name, year) {
+                                this.name = name;
+                                this.year = year;
+                            }
+                            age(x) {
+                                return x - this.year;
+                            }
+                        }
+                        const date = new Date();
+                        const year = date.getFullYear();
+                        let myCar = new car("Ford", 2014);
+                        document.getElementById("demo7").innerHTML = "My " + myCar.name + " is " + myCar.age(year) + " years old.";
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
