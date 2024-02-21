@@ -121,11 +121,13 @@
                 <div class="container-fluid bg-primary">
                     //class
                     <p id="demo7"></p>
+                    <p id="demo8"></p>
                     <script>
                         class car {
-                            constructor(name, year) {
+                            constructor(name, year, owner) {
                                 this.name = name;
                                 this.year = year;
+                                this.owner = owner;
                             }
                             age(x) {
                                 return x - this.year;
@@ -134,7 +136,9 @@
                         const date = new Date();
                         const year = date.getFullYear();
                         let myCar = new car("Ford", 2014);
+                        let carowner = new car("Ford", 2014, "Joseph");
                         document.getElementById("demo7").innerHTML = "My " + myCar.name + " is " + myCar.age(year) + " years old.";
+                        document.getElementById("demo8").innerHTML = "My " + carowner.name + " is " + carowner.age(year) + " years old." + " and the owner is " + carowner.owner;
                     </script>
                 </div>
             </div>
