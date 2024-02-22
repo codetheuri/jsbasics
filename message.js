@@ -6,3 +6,8 @@ function solution(a){
     return result;
 }
 
+function msg(){
+    let mg= "Hello, World!";
+    return mg;
+}
+
