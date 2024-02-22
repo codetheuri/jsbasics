@@ -223,6 +223,28 @@
 
 
             </div>
+             <div class="col-md-6 bg-primary">
+                //promise
+                <p id="demo11"> </p>
+                <script>
+                    let mypromise = new Promise(function (myresolve, myreject) {
+                        let x = 0;
+                        if (x == 0) {
+                            myresolve("sucesss");
+                        } else {
+                            myreject("Error");
+                        }
+                    });
+                    mypromise.then(
+                        function (value) {
+                            document.getElementById("demo11").innerHTML = value;
+                        },
+                        function (error) {
+                            document.getElementById("demo11").innerHTML = error;
+                        }
+                    );
+                    </script>
+             </div>
 
         </div>
     </div>
