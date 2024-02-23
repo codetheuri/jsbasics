@@ -95,7 +95,7 @@
                 //array
                 <p id="demo2"></p>
                 <script>
-                    const person = ["John", "Doe", 46];
+                    const person1 = ["John", "Doe", 46];
                     document.getElementById("demo2").innerHTML = person[0] + " " + person[1];
                 </script>
             </div>
@@ -106,9 +106,13 @@
                     const name = {
                         firstName: "John",
                         lastName: "Doe",
-                        age: 46
+                        secondName: "Joseph",
+                        age: 46,
+                        fname : function() {
+                            return this.firstName + " " + this.lastName + " " + this.secondName ;
+                        }
                     };
-                    document.getElementById("demo3").innerHTML = name.firstName + " " + name.lastName; 
+                    document.getElementById("demo3").innerHTML = name.fname(); 
                 </script>
             </div>
             <div class="col-md-6 bg-body-secondary">
@@ -245,7 +249,35 @@
                     );
                     </script>
              </div>
+             <div class="col-md-6 bg-secondary">
+                //call and apply
+                <p id="demo12"> </p>
+                <p id="demo13"> </p>
+                <p id="demo14"> </p>
+                <p id="demo15"> </p>
+                <script>
+                    const person = {
+                        // added arguments
+                        fullName: function(age,country) {
+                            return this.firstName + " " + this.lastName +"," + age + "," + country;
+                        }
+                    }
+                    const person2 = {
+                        firstName: "John",
+                        lastName: "Doe"
+                    }
+                    const person3 = {
+                        firstName: "Mary",
+                        lastName: "Doe"
+                    }
 
+                    document.getElementById("demo12").innerHTML = person.fullName.call(person2, "46", "USA");
+                    //apply takes arguments as an array
+                    document.getElementById("demo13").innerHTML = person.fullName.apply(person3, ["26", "UK"]);
+                    document.getElementById("demo14").innerHTML =Math.max.call(null,1, 2, 3);
+                    document.getElementById("demo15").innerHTML =Math.max.apply(1, [1, 2, 3]);
+                </script>
+               
         </div>
     </div>
     </div>
