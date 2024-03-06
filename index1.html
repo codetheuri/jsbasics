@@ -24,11 +24,20 @@
    var lastName = "Theuri";
    var fullName = firstName + " " + lastName;
    var a =1;*/
-   var username = prompt("What is your name?");
-   document.write("<h1> hello " + username+ "</h1>");
-  
+   var username = prompt("Hello Enter your name in the box below:");
+   var car = new Array("Toyota", "Nissan", "Subaru", "Mazda", "Mitsubishi", "Honda", "Suzuki", "Isuzu", "Daihatsu", "Hino");
+   console.log(car);
+      if(username == "joseph"){
+       document.write("<h1 Hello>" + username  + ", You won a "+ car[2]+" </h1>");
+      }else if(username == ""){
+       document.write("<h1> Hello, You did not enter your name, try again later!</h1>");
+   }else{
+   document.write("<h1> hello " + username+ ", not you try again later!</h1>");
+   }
 </script>
 <body>
-    
+    <div>
+        <h1></h1>
+    </div>
   </body> 
 </html>
